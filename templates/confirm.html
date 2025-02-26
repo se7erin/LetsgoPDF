@@ -1,0 +1,53 @@
+<!-- templates/confirm.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm - PDF Unlock Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Unlock Tool</h1>
+            <p class="subtitle">File uploaded successfully</p>
+        </header>
+        
+        <main>
+            <section class="confirm-section">
+                <div class="info-box">
+                    <h2>File Information</h2>
+                    <div class="file-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Filename:</span>
+                            <span class="detail-value">{{ filename }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">File Size:</span>
+                            <span class="detail-value">{{ filesize }}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Protected:</span>
+                            <span class="detail-value">{{ protected }}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-box">
+                    <h2>Ready to Process</h2>
+                    <p>Click the button below to unlock your PDF file.</p>
+                    <form action="/process" method="post">
+                        <button type="submit" class="process-button">Process PDF</button>
+                    </form>
+                    <p class="note">This may take a few moments depending on file size.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; {{ current_year }} PDF Unlock Tool. Files are processed locally and automatically deleted.</p>
+        </footer>
+    </div>
+</body>
+</html>

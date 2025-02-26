@@ -1,0 +1,48 @@
+<!-- templates/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - PDF Unlock Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Unlock Tool</h1>
+            <p class="subtitle">Success!</p>
+        </header>
+        
+        <main>
+            <section class="success-section">
+                <div class="success-box">
+                    <div class="success-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h2>PDF Successfully Unlocked!</h2>
+                    <p>Your file <strong>{{ filename }}</strong> has been processed and is ready for download.</p>
+                    <p class="success-message">{{ message }}</p>
+                    
+                    <div class="download-section">
+                        <p>Your unlocked file: <strong>{{ output_filename }}</strong></p>
+                        <a href="/download" class="download-button">Download Unlocked PDF</a>
+                    </div>
+                    
+                    <div class="additional-info">
+                        <p class="note">Files will be automatically deleted after {{ expiry }} minutes for security.</p>
+                        <p>Need to unlock another PDF? <a href="/">Start over</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; {{ current_year }} PDF Unlock Tool. Files are processed locally and automatically deleted.</p>
+        </footer>
+    </div>
+</body>
+</html>

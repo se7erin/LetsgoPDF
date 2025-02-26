@@ -1,0 +1,54 @@
+<!-- templates/error.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - PDF Unlock Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Unlock Tool</h1>
+            <p class="subtitle">Error Occurred</p>
+        </header>
+        
+        <main>
+            <section class="error-section">
+                <div class="error-box">
+                    <div class="error-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h2>Something Went Wrong</h2>
+                    <p class="error-message">{{ error }}</p>
+                    
+                    <div class="options">
+                        <p>What would you like to do next?</p>
+                        <div class="option-buttons">
+                            <a href="/" class="primary-button">Try Again</a>
+                        </div>
+                    </div>
+                    
+                    <div class="help-info">
+                        <h3>Common Issues</h3>
+                        <ul>
+                            <li>Some PDFs use advanced encryption that cannot be bypassed</li>
+                            <li>Corrupted PDF files may not process correctly</li>
+                            <li>Very large files may time out during processing</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; {{ current_year }} PDF Unlock Tool. Files are processed locally and automatically deleted.</p>
+        </footer>
+    </div>
+</body>
+</html>
