@@ -1,0 +1,68 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Unlock Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Unlock Tool</h1>
+            <p class="subtitle">Remove password protection from your PDF files</p>
+        </header>
+        
+        <main>
+            <section class="info-section">
+                <div class="info-box">
+                    <h2>How It Works</h2>
+                    <ul>
+                        <li>Upload your password-protected PDF</li>
+                        <li>Our tool will process the file to remove protection</li>
+                        <li>Download your unlocked PDF file</li>
+                    </ul>
+                    <p class="note">Files are automatically deleted after {{ expiry }} minutes for security</p>
+                </div>
+            </section>
+            
+            {% if error %}
+            <div class="error-message">
+                <p>{{ error }}</p>
+            </div>
+            {% endif %}
+            
+            <section class="upload-section">
+                <div class="upload-box">
+                    <h2>Upload PDF File</h2>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="file-input">
+                            <input type="file" name="file" id="file" accept=".pdf" required>
+                            <label for="file">
+                                <div class="file-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <span class="file-label">Choose a PDF file or drop it here</span>
+                            </label>
+                        </div>
+                        <p class="file-limits">Maximum file size: {{ max_size }}MB</p>
+                        <button type="submit" class="upload-button">Upload & Continue</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; {{ current_year }} PDF Unlock Tool. Files are processed locally and automatically deleted.</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
