@@ -10,7 +10,7 @@ import threading
 import shutil
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Secret key for sessions
+app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'development-key-only')  # Gets key from environment variable
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
