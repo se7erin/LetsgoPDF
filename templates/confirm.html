@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <button class="theme-toggle" id="themeToggle">🌙</button>
+    <button class="theme-toggle" id="themeToggle">☀️</button>
     <div class="container">
         <header>
             <h1>PDF Unlock Tool</h1>
@@ -50,5 +50,7 @@
             <p>&copy; {{ current_year }} PDF Unlock Tool. Files are processed locally and automatically deleted.</p>
         </footer>
     </div>
+    
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
