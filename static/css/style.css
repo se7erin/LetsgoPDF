@@ -665,3 +665,23 @@ input, select, textarea {
         max-width: 280px;
     }
 }
+
+.tagline {
+    margin-bottom: 25px;
+    color: var(--text-color);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tagline p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.small-note {
+    font-size: 0.9rem !important;
+    color: var(--note-color);
+    font-style: italic;
+}
