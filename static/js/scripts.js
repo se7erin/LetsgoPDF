@@ -6,22 +6,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check for saved theme preference or use default (dark)
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.body.classList.toggle('dark-theme', savedTheme === 'dark');
-    updateThemeIcon(savedTheme === 'dark');
     
-    // Theme toggle button handler
+    // Set initial toggle state
     if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            const isDark = document.body.classList.toggle('dark-theme');
+        themeToggle.checked = savedTheme === 'dark';
+        
+        // Theme toggle handler
+        themeToggle.addEventListener('change', function() {
+            const isDark = this.checked;
+            document.body.classList.toggle('dark-theme', isDark);
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            updateThemeIcon(isDark);
         });
-    }
-    
-    function updateThemeIcon(isDark) {
-        if (themeToggle) {
-            themeToggle.textContent = isDark ? '☀️' : '🌙';
-            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-        }
     }
     
     // File input handling

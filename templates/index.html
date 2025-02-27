@@ -9,11 +9,18 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body class="dark-theme">
-    <button class="theme-toggle" id="themeToggle">🌙</button>
+    <div class="theme-toggle-container">
+        <input type="checkbox" id="themeToggle" class="theme-toggle">
+        <label for="themeToggle" class="theme-toggle-label">
+            <span class="sun-icon"></span>
+            <span class="moon-icon"></span>
+            <div class="ball"></div>
+        </label>
+    </div>
     <div class="container">
         <header>
             <h1><a href="/" class="logo-link">LetsgoPDF</a></h1>
-            <p class="subtitle">Remove password protection from your PDF files</p>
+            <p class="subtitle">Unlock password-protected PDFs in seconds • No original password needed</p>
         </header>
         
         <main>
