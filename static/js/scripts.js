@@ -90,10 +90,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Add current year to footer
-    const footerYear = document.querySelector('footer p');
-    if (footerYear) {
+    const yearSpans = document.querySelectorAll('.current-year');
+    if (yearSpans.length > 0) {
         const currentYear = new Date().getFullYear();
-        footerYear.innerHTML = footerYear.innerHTML.replace('{{ current_year }}', currentYear);
+        yearSpans.forEach(span => {
+            span.textContent = currentYear;
+        });
     }
     
     // Auto hide error and success messages after a few seconds
