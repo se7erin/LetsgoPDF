@@ -18,6 +18,8 @@
     --note-color: #666;
     --pixel-border: 2px solid #9966ff;
     --retro-pattern: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239966ff' fill-opacity='0.05'%3E%3Cpath d='M0 0h20v20H0V0zm10 10v10h10V10H10zM0 10h10V0H0v10z'/%3E%3C/g%3E%3C/svg%3E");
+    --step-number-bg: #6633cc;
+    --step-number-color: #ffffff;
 }
 
 body.dark-theme {
@@ -39,6 +41,8 @@ body.dark-theme {
     --note-color: #aa99cc;
     --pixel-border: 2px solid #9966ff;
     --retro-pattern: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239966ff' fill-opacity='0.1'%3E%3Cpath d='M0 0h20v20H0V0zm10 10v10h10V10H10zM0 10h10V0H0v10z'/%3E%3C/g%3E%3C/svg%3E");
+    --step-number-bg: #cc99ff;
+    --step-number-color: #2d2a4a;
 }
 
 * {
@@ -421,12 +425,31 @@ footer {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: none;
-    border: none;
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--text-color);
+    font-size: 1.8rem;
+    color: var(--heading-color);
     z-index: 100;
+    padding: 8px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 a {
@@ -509,21 +532,23 @@ input, select, textarea {
 }
 
 .step-number {
-    background: var(--accent-color);
-    color: var(--bg-color);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    background: var(--step-number-bg);
+    color: var(--step-number-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     position: absolute;
-    top: -15px;
+    top: -16px;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Press Start 2P', cursive;
-    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border: 2px solid var(--border-color);
 }
 
 .step-image {
