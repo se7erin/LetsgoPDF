@@ -331,3 +331,16 @@ footer {
     color: #666;
     font-size: 0.9rem;
 }
+
+/* Theme toggle button */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    z-index: 100;
+}
