@@ -1,40 +1,44 @@
 /* static/css/style.css */
 :root {
-    /* Light theme variables */
-    --bg-color: #f5f5f5;
+    /* Light theme variables - Retro-Modern Fusion */
+    --bg-color: #e8e4ff;
     --container-bg: #ffffff;
     --text-color: #333333;
-    --heading-color: #2c3e50;
-    --border-color: #e0e0e0;
+    --heading-color: #6633cc;
+    --border-color: #9966ff;
     --input-bg: #ffffff;
-    --button-bg: #4CAF50;
-    --button-hover: #45a049;
+    --button-bg: #ff6699;
+    --button-hover: #ff3377;
     --button-text: white;
-    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --info-box-bg: #f8f9fa;
-    --success-color: #4CAF50;
-    --error-color: #f44336;
-    --link-color: #2196F3;
+    --box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+    --info-box-bg: #f0f0ff;
+    --success-color: #33cc99;
+    --error-color: #ff5544;
+    --link-color: #3366ff;
     --note-color: #666;
+    --pixel-border: 2px solid #9966ff;
+    --retro-pattern: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239966ff' fill-opacity='0.05'%3E%3Cpath d='M0 0h20v20H0V0zm10 10v10h10V10H10zM0 10h10V0H0v10z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 body.dark-theme {
-    /* Dark theme variables */
-    --bg-color: #121212;
-    --container-bg: #1e1e1e;
-    --text-color: #e0e0e0;
-    --heading-color: #f5f5f5;
-    --border-color: #333333;
-    --input-bg: #2d2d2d;
-    --button-bg: #388e3c;
-    --button-hover: #2e7d32;
-    --button-text: #f5f5f5;
-    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    --info-box-bg: #252525;
-    --success-color: #4CAF50;
-    --error-color: #f44336;
-    --link-color: #64B5F6;
-    --note-color: #aaa;
+    /* Dark theme variables - Retro-Modern Fusion */
+    --bg-color: #1a1433;
+    --container-bg: #2d2a4a;
+    --text-color: #e0e0ff;
+    --heading-color: #cc99ff;
+    --border-color: #9966ff;
+    --input-bg: #352e59;
+    --button-bg: #ff6699;
+    --button-hover: #ff3377;
+    --button-text: #ffffff;
+    --box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
+    --info-box-bg: #252042;
+    --success-color: #33cc99;
+    --error-color: #ff5544;
+    --link-color: #99ccff;
+    --note-color: #aa99cc;
+    --pixel-border: 2px solid #9966ff;
+    --retro-pattern: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239966ff' fill-opacity='0.1'%3E%3Cpath d='M0 0h20v20H0V0zm10 10v10h10V10H10zM0 10h10V0H0v10z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 * {
@@ -45,29 +49,37 @@ body.dark-theme {
 
 body {
     background-color: var(--bg-color);
+    background-image: var(--retro-pattern);
     color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Press Start 2P', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 20px;
     background-color: var(--container-bg);
     box-shadow: var(--box-shadow);
+    border: var(--pixel-border);
+    border-radius: 0;
+    image-rendering: pixelated;
 }
 
 header {
     text-align: center;
     margin-bottom: 30px;
     padding: 20px 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 4px solid var(--border-color);
+    background-image: linear-gradient(to right, rgba(153, 102, 255, 0.1), rgba(255, 102, 153, 0.1));
 }
 
 h1, h2, h3 {
     color: var(--heading-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
 }
 
 h1 {
@@ -87,10 +99,10 @@ h1 {
 
 .info-box {
     background-color: var(--info-box-bg);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    border: var(--pixel-border);
 }
 
 .info-box h2 {
@@ -155,8 +167,8 @@ h1 {
     width: 100%;
     height: 200px;
     background-color: var(--input-bg);
-    border: 2px dashed var(--border-color);
-    border-radius: 8px;
+    border: 4px dashed var(--border-color);
+    border-radius: 0;
     cursor: pointer;
     transition: all 0.3s;
     color: var(--text-color);
@@ -190,14 +202,21 @@ h1 {
     padding: 12px 24px;
     font-size: 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 0;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.2s;
     text-decoration: none;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
 }
 
 .upload-button:hover, .process-button:hover, .download-button:hover, .primary-button:hover {
     background-color: var(--button-hover);
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Error Message */
@@ -246,11 +265,11 @@ h1 {
 
 .action-box {
     background-color: var(--info-box-bg);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
+    border: var(--pixel-border);
     text-align: center;
-    border: 1px solid var(--border-color);
 }
 
 .action-box h2 {
@@ -271,11 +290,11 @@ h1 {
 
 .success-box, .error-box {
     background-color: var(--info-box-bg);
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    border: var(--pixel-border);
     text-align: center;
-    border: 1px solid var(--border-color);
 }
 
 .success-icon, .error-icon {
@@ -421,6 +440,29 @@ input, select, textarea {
 }
 
 .logo-link:hover {
-    opacity: 0.9;
+    animation: blink 0.5s infinite;
     text-decoration: none;
+}
+
+/* Blink animation for retro feel */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Add pixel corners to elements */
+.pixel-corners {
+    clip-path: polygon(
+        0% 4px, 4px 4px, 4px 0%, calc(100% - 4px) 0%, calc(100% - 4px) 4px, 100% 4px, 
+        100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 
+        4px calc(100% - 4px), 0% calc(100% - 4px)
+    );
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/pressstart2p/v14/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
