@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LetsgoPDF - PDF Unlock Tool</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body class="dark-theme">
     <button class="theme-toggle" id="themeToggle">🌙</button>
@@ -22,7 +23,13 @@
                     <div class="step-box">
                         <div class="step-number">1</div>
                         <div class="step-image">
-                            <img src="{{ url_for('static', filename='images/upload.gif') }}" alt="Upload PDF">
+                            <lottie-player
+                                src="{{ url_for('static', filename='images/upload.json') }}"
+                                background="transparent"
+                                speed="1"
+                                loop
+                                autoplay>
+                            </lottie-player>
                         </div>
                         <h3>Upload PDF</h3>
                         <p>Select your password-protected PDF file</p>
@@ -31,7 +38,13 @@
                     <div class="step-box">
                         <div class="step-number">2</div>
                         <div class="step-image">
-                            <img src="{{ url_for('static', filename='images/process.gif') }}" alt="Process PDF">
+                            <lottie-player
+                                src="{{ url_for('static', filename='images/loader.json') }}"
+                                background="transparent"
+                                speed="1"
+                                loop
+                                autoplay>
+                            </lottie-player>
                         </div>
                         <h3>Process</h3>
                         <p>Our tool removes the password protection</p>
@@ -40,7 +53,13 @@
                     <div class="step-box">
                         <div class="step-number">3</div>
                         <div class="step-image">
-                            <img src="{{ url_for('static', filename='images/download.gif') }}" alt="Download PDF">
+                            <lottie-player
+                                src="{{ url_for('static', filename='images/download.json') }}"
+                                background="transparent"
+                                speed="1"
+                                loop
+                                autoplay>
+                            </lottie-player>
                         </div>
                         <h3>Download</h3>
                         <p>Get your unlocked PDF file instantly</p>
