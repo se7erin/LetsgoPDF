@@ -685,3 +685,73 @@ input, select, textarea {
     color: var(--note-color);
     font-style: italic;
 }
+
+/* FAQ Section Styling */
+.faq-section {
+    margin: 40px 0;
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: var(--info-box-bg);
+}
+
+.faq-question {
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: rgba(153, 102, 255, 0.1);
+}
+
+.faq-question.active {
+    background-color: rgba(153, 102, 255, 0.15);
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-transform: none;
+    letter-spacing: 0;
+    text-shadow: none;
+    flex: 1;
+    color: var(--heading-color);
+}
+
+.faq-toggle {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.faq-answer {
+    padding: 0 20px 15px 20px;
+    line-height: 1.6;
+}
+
+.faq-answer p {
+    margin: 0;
+}
