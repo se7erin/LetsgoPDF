@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LetsgoPDF - PDF Unlock Tool</title>
+    <title>LetsgoPDF - Unlock PDF Restrictions for Printing, Editing & Copying</title>
+    <meta name="description" content="Free tool to remove PDF restrictions that prevent printing, editing, or copying content. Unlock permission-protected PDF files instantly.">
+    <meta name="keywords" content="unlock pdf, remove pdf restrictions, pdf permissions, edit protected pdf, print locked pdf, copy pdf content, pdf unlocker">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="LetsgoPDF - Unlock PDF Restrictions for Printing, Editing & Copying">
+    <meta property="og:description" content="Free online tool to unlock PDF files and remove restrictions on printing, editing, and copying content.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    
+    <link rel="canonical" href="{{ request.url_root }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
@@ -19,17 +29,17 @@
     </div>
     <div class="container">
         <header>
-            <h1><a href="/" class="logo-link">LetsgoPDF</a></h1>
+            <h1><a href="/" class="logo-link">LetsgoPDF - PDF Restriction Remover</a></h1>
             <p class="subtitle">Remove PDF restrictions in seconds</p>
             <div class="tagline">
-                <p>Unlock PDF files that prevent printing, editing, or copying content</p>
-                <p class="small-note">Works on permission-restricted PDFs, not encryption passwords</p>
+                <p>Unlock PDF files that prevent printing, editing, or copying content - 100% Free</p>
+                <p class="small-note">Removes permission restrictions from PDFs, allowing you to freely print, edit, and copy content</p>
             </div>
         </header>
         
         <main>
             <section class="info-section">
-                <h2 class="section-title">How It Works</h2>
+                <h2 class="section-title">How Our PDF Unlocker Works</h2>
                 <div class="steps-container">
                     <div class="step-box">
                         <div class="step-number">1</div>
@@ -87,7 +97,7 @@
             
             <section class="upload-section">
                 <div class="upload-box">
-                    <h2>Upload PDF File</h2>
+                    <h2>Upload Your Restricted PDF File</h2>
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         <div class="file-input">
                             <input type="file" name="file" id="file" accept=".pdf" required>
@@ -108,13 +118,51 @@
                     </form>
                 </div>
             </section>
+            
+            <!-- New FAQ Section for SEO -->
+            <section class="faq-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3>What types of PDF restrictions can LetsgoPDF remove?</h3>
+                        <p>Our tool removes permission-based restrictions that prevent printing, editing, copying text, and other content interactions. These are restrictions set through permission settings, not encryption passwords.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is it legal to remove PDF restrictions?</h3>
+                        <p>Yes, it's legal to remove PDF restrictions for documents you own or have permission to modify. However, always respect copyright laws and document owner rights.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How secure is LetsgoPDF?</h3>
+                        <p>Your files are processed locally and automatically deleted after {{ expiry }} minutes. We never store your PDF content or share it with third parties.</p>
+                    </div>
+                </div>
+            </section>
         </main>
         
         <footer>
-            <p>&copy; <span class="current-year"></span> LetsgoPDF. Files are processed locally and automatically deleted.</p>
+            <p>&copy; <span class="current-year"></span> LetsgoPDF. Files are processed locally and automatically deleted for your privacy and security.</p>
+            <p>Unlock PDF permissions for printing, editing and copying text without software installation.</p>
         </footer>
     </div>
     
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "LetsgoPDF",
+        "url": "{{ request.url_root }}",
+        "description": "Free online tool to unlock PDF files and remove restrictions on printing, editing, and copying content.",
+        "applicationCategory": "Utility",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
 </body>
 </html>
