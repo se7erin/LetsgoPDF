@@ -17,15 +17,36 @@
         
         <main>
             <section class="info-section">
-                <div class="info-box">
-                    <h2>How It Works</h2>
-                    <ul>
-                        <li>Upload your password-protected PDF</li>
-                        <li>Our tool will process the file to remove protection</li>
-                        <li>Download your unlocked PDF file</li>
-                    </ul>
-                    <p class="note">Files are automatically deleted after {{ expiry }} minutes for security</p>
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps-container">
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <div class="step-image">
+                            <img src="{{ url_for('static', filename='images/upload.gif') }}" alt="Upload PDF">
+                        </div>
+                        <h3>Upload PDF</h3>
+                        <p>Select your password-protected PDF file</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <div class="step-image">
+                            <img src="{{ url_for('static', filename='images/process.gif') }}" alt="Process PDF">
+                        </div>
+                        <h3>Process</h3>
+                        <p>Our tool removes the password protection</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <div class="step-image">
+                            <img src="{{ url_for('static', filename='images/download.gif') }}" alt="Download PDF">
+                        </div>
+                        <h3>Download</h3>
+                        <p>Get your unlocked PDF file instantly</p>
+                    </div>
                 </div>
+                <p class="note">Files are automatically deleted after {{ expiry }} minutes for security</p>
             </section>
             
             {% if error %}
